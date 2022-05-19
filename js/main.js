@@ -21,7 +21,8 @@ class Coche {
     //Después vienen los métodos (funciones de la clase)
     acelerar () {   
         this.velocidad = (this.velocidad + 20 * this.cilindrada) / 100;
-        this.metros = this.velocidad / 2;
+        this.metros += this.velocidad / 2;
+        
     };
 
     frenar () {
@@ -44,13 +45,17 @@ while (marcCar.metros <= 5000 || ivanCar.metros <= 5000 || lucianoCar.metros <= 
     ivanCar.acelerar();
     lucianoCar.acelerar();
 
-    if(marcCar.metros <= 5000){
+    console.log("Marc ha recorrido", marcCar.metros);
+    console.log("Ivan ha recorrido", ivanCar.metros);
+    console.log("Luciano ha recorrido", lucianoCar.metros);
+
+    if(marcCar.metros >= 5000){
         console.log("Ha ganado Marc");
         break;
-    } else if (ivanCar.metros <= 5000){
+    } else if (ivanCar.metros >= 5000){
         console.log("Ha ganado Ivan");
         break;
-    } else if (lucianoCar.metros <= 5000){
+    } else if (lucianoCar.metros >= 5000){
         console.log("Ha ganado Luciano");
         break;
     };
